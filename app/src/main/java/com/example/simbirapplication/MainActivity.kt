@@ -6,9 +6,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import androidx.annotation.RequiresApi
-import com.google.android.material.datepicker.MaterialDatePicker
 import java.util.Calendar
 
 
@@ -29,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         val date:Button =findViewById(R.id.buttonDate)
         date.setOnClickListener {
-            val dpd = DatePickerDialog(this,DatePickerDialog.OnDateSetListener { _, mYear, mMonth, mDayOfMonth ->
+            val dpd = DatePickerDialog(this, { _, mYear, mMonth, mDayOfMonth ->
                 date.text = ""+ mDayOfMonth+"/"+(mMonth+1)+"/"+mYear
             },year,month,day)
             dpd.show()
