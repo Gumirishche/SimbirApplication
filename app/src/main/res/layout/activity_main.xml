@@ -38,12 +38,16 @@
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textCase"
             android:text="Case:"
-            android:ems="10"
             android:id="@+id/textCase"
             app:layout_constraintBottom_toTopOf="@+id/buttonAdd" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="104dp" android:minHeight="48dp" tools:ignore="InvalidId"/>
+            android:minHeight="48dp" tools:ignore="HardcodedText"/>
+    <TextView
+            android:layout_width="314dp"
+            android:layout_height="173dp" android:id="@+id/caseText"
+            android:layout_marginBottom="109dp"
+            app:layout_constraintBottom_toTopOf="@+id/textCase" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="40dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

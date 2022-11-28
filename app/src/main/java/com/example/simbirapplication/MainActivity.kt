@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.text.TextPaint
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import java.util.Calendar
 
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var casesDate:MutableList<Int>
-        var cases:MutableList<Day>
+        var caseDay:Day
 
         var x:String = "4"
 
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         val day = c.get(Calendar.DAY_OF_MONTH)
         val date:Button =findViewById(R.id.buttonDate)
         val input:EditText = findViewById(R.id.textCase)
+        val output:TextView = findViewById(R.id.caseText)
         date.setOnClickListener {
             val dpd = DatePickerDialog(this, { _, mYear, mMonth, mDayOfMonth ->
                 date.text = ""+ mDayOfMonth+"/"+(mMonth+1)+"/"+mYear
@@ -38,9 +40,8 @@ class MainActivity : AppCompatActivity() {
         }
         val adder: Button = findViewById(R.id.buttonAdd)
         adder.setOnClickListener{
-            var case:String = input.text
-            var day:Day = Day(day,month,year,)
-            cases.add()
+            caseDay = Day(day,month,year,input.text.toString())
+            output.text = caseDay.getCases()
         }
     }
 }
